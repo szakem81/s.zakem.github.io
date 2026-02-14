@@ -359,4 +359,30 @@ a { text-decoration: none; color: inherit; }
     .status-block { text-align: left; margin-top: 10px; }
     .identity-text h1 { font-size: 2rem; }
     .nav-bar { flex-wrap: wrap; }
+
+}
+/* ==========================================
+   TACTICAL ELEVATION & MAGNETIC LIFT
+   Applies constant depth and an 8px hover lift to 
+   all panels and buttons below the header line.
+   ========================================== */
+
+/* 1. Base Elevation (Constant Shadow & Physics) */
+.panel, 
+.nav-btn, 
+.patent-btn, 
+.stack-btn {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+    will-change: transform, box-shadow !important; /* Optimizes browser rendering for a smoother lift */
+}
+
+/* 2. Hover Elevation (The 8px Magnetic Lift) */
+.panel:hover, 
+.nav-btn:hover, 
+.patent-btn:hover, 
+.stack-btn:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important; /* Deeper, wider shadow to simulate height */
+    border-color: var(--accent-color) !important; /* Illuminates the border with your sky blue accent */
 }
