@@ -408,4 +408,28 @@ a { text-decoration: none; color: inherit; }
     border-left-color: var(--warning-color) !important;
     box-shadow: -4px 0 10px rgba(245, 158, 11, 0.2) !important; /* Adds a slight amber bleed to the line */
 }
+/* ==========================================
+   HIGH-CONTRAST TACTICAL UI (TEAL/ORANGE)
+   Cross-wires the hover lines and dotted underlines 
+   to break up the color scheme for maximum visibility.
+   ========================================== */
+
+/* 1. Blue Panels -> Orange Hover Bars & Orange Dotted Text */
+.panel:not(.military-panel) .job-entry:hover {
+    border-left-color: var(--warning-color) !important;
+    box-shadow: -4px 0 10px rgba(245, 158, 11, 0.2) !important;
+}
+.panel:not(.military-panel) .dots {
+    border-bottom: 1px dotted var(--warning-color) !important;
+}
+
+/* 2. Orange Panels -> Blue Hover Bars & Blue Dotted Text */
+.military-panel .job-entry:hover {
+    border-left-color: var(--accent-color) !important;
+    box-shadow: -4px 0 10px rgba(14, 165, 233, 0.2) !important;
+}
+.military-panel .dots {
+    border-bottom: 1px dotted var(--accent-color) !important;
+}
+
 
