@@ -362,27 +362,40 @@ a { text-decoration: none; color: inherit; }
 
 }
 /* ==========================================
-   TACTICAL ELEVATION & MAGNETIC LIFT
-   Applies constant depth and an 8px hover lift to 
-   all panels and buttons below the header line.
+   TACTICAL GLOW & MAGNETIC LIFT (COLOR-MATCHED)
+   Applies a constant colored glow matching the panel 
+   triangles, with an 8px magnetic hover lift.
    ========================================== */
 
-/* 1. Base Elevation (Constant Shadow & Physics) */
+/* 1. Base Elevation (Default Sky Blue Glow for standard elements) */
 .panel, 
 .nav-btn, 
 .patent-btn, 
 .stack-btn {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    /* Uses exact RGB values of your #0ea5e9 accent color */
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2) !important; 
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
-    will-change: transform, box-shadow !important; /* Optimizes browser rendering for a smoother lift */
+    will-change: transform, box-shadow !important;
 }
 
-/* 2. Hover Elevation (The 8px Magnetic Lift) */
+/* 2. Hover Elevation (Intense Sky Blue Glow on lift) */
 .panel:hover, 
 .nav-btn:hover, 
 .patent-btn:hover, 
 .stack-btn:hover {
     transform: translateY(-8px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important; /* Deeper, wider shadow to simulate height */
-    border-color: var(--accent-color) !important; /* Illuminates the border with your sky blue accent */
+    box-shadow: 0 15px 35px rgba(14, 165, 233, 0.5) !important; 
+    border-color: var(--accent-color) !important; 
+}
+
+/* 3. Military Panel Override (Matches the Amber Triangle) */
+.military-panel {
+    /* Uses exact RGB values of your #f59e0b warning color */
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2) !important; 
+}
+
+.military-panel:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5) !important; 
+    border-color: var(--warning-color) !important; 
 }
