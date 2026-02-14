@@ -399,3 +399,13 @@ a { text-decoration: none; color: inherit; }
     box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5) !important; 
     border-color: var(--warning-color) !important; 
 }
+/* ==========================================
+   AMBER THEME OVERRIDES
+   Forces the vertical border highlights inside 
+   Amber panels to match the warning color on hover.
+   ========================================== */
+.military-panel .job-entry:hover {
+    border-left-color: var(--warning-color) !important;
+    box-shadow: -4px 0 10px rgba(245, 158, 11, 0.2) !important; /* Adds a slight amber bleed to the line */
+}
+
